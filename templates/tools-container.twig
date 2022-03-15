@@ -1,0 +1,8 @@
+
+        <h3 class="display-4 text-center"> Tools </h3>
+        <hr class="bg-dark mb-4 w-25">
+        <div class="row">
+            {% for tool in tools %}
+                {% include('tools-item.twig') %}
+            {% endfor %}
+        </div>

@@ -10,7 +10,20 @@ class IndexController extends Controller
 {
     public function index()
     {
-        echo $this->getTemplateManager()->render('home.twig', []);
+        $tools = [
+            [
+                'image' => [
+                    'url' => 'https://dummyimage.com/350x250/c7c7c7/000.png',
+                    'alt' => ''
+                ],
+                'title' => 'API Mocking Server',
+                'description' => 'Tool created to mock real API servers in integration tests',
+                'url' => '#'
+            ]
+
+        ];
+
+        echo $this->getTemplateManager()->render('home.twig', ['tools' => $tools]);
     }
 
     public function about()
