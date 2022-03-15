@@ -1,0 +1,14 @@
+{
+    "name": "harpya/dashboard",
+    "description": "Initial page for Harpya VM server.",
+    "autoload": {
+        "psr-4": {
+            "harpya\\dashboard\\": "src/",
+            "harpya\\cms\\": "lib/cms/"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.3",
+        "altorouter/altorouter": "^2.0"
+    }
+}
