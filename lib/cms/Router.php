@@ -25,13 +25,6 @@ class Router extends \AltoRouter
 
     public function handle()
     {
-
-// include_once __DIR__ .'/../';
-        // $defaultRoute = [IndexController::class, 'index'];
-
-        // $router->map('GET', '/', $defaultRoute);
-        // $router->map('GET', '/about', [IndexController::class, 'about']);
-
         try {
             $match = $this->match();
         } catch (\Exception $e) {
@@ -39,15 +32,8 @@ class Router extends \AltoRouter
         }
 
 
-        // echo "<pre style='color:red'>";
-        // var_dump($match);
 
         if (!$match && $this->defaultRoute) {
-            // if (!$this->defaultRoute) {
-            //     header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
-            //     exit;
-            // }
-
             $match = [
                 'target' => $this->defaultRoute,
                 'params' => [],
@@ -64,9 +50,8 @@ class Router extends \AltoRouter
                     $match['target'][0] = $obj;
                 }
             }
-            //  else {
+
             call_user_func_array($match['target'], $match['params']);
-        // }
         } else {
             header($_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
             exit;
