@@ -1,0 +1,38 @@
+{% extends "index.twig" %}
+
+{% block content %}
+
+
+        
+        <div class="row">
+
+
+            <div class="col-md-12">
+            <h3 class="display-4 text-center">  {{ tool.title }} </h3>
+            <hr class="bg-dark mb-4 w-25">
+            </div>
+            <div class="col-md-10">
+
+                <dt class="details-label">Description</dt>
+                <dd class="details-text">{{ tool.description}}</dd>
+
+            </div>
+
+            <div class="col-md-2">
+                <ul>
+                    {% for link in tool.links %}
+                    <li class="list-unstyled small"><a href="{{ link.url }}">{{ link.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+        <hr/>
+        
+        <div class="row">
+            <div class="col-md-12">
+                {{ contents|raw }}
+            </div>
+        </div>
+
+{% endblock %}
