@@ -9,8 +9,12 @@ use harpya\cms\Config;
 
 use harpya\dashboard\controller\IndexController;
 
-define('TEMPLATE_DIR', __DIR__.'/../templates');
-// Config::getInstance()->set('TEMPLATE_DIR', __DIR__.'/../templates');
+define('ROOT_DIR', __DIR__.'/..');
+define('TEMPLATE_DIR', ROOT_DIR.'/templates');
+define('DOC_TOOLS_DIR', ROOT_DIR.'/doc-tools');
+define('DATA_DIR', ROOT_DIR.'/data');
+
+
 
 $router = new Router();
 
